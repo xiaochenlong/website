@@ -2,14 +2,18 @@ package vip.ace.admin.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
+import vip.ace.admin.service.SysAuthoritiesService;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -24,6 +28,7 @@ public class URLAccessDecisionManager implements AccessDecisionManager {
     private static Logger logger = LoggerFactory.getLogger(URLAccessDecisionManager.class);
 
 
+
     /**
      * 验证 authentication是否有访问object的权限
      * @param authentication 验证对象
@@ -36,7 +41,8 @@ public class URLAccessDecisionManager implements AccessDecisionManager {
     public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> collection) throws AccessDeniedException, InsufficientAuthenticationException {
         System.out.println("------"+object.toString());
         System.out.println("******"+collection);
-        if (collection == null || true) {
+        System.out.print(authentication.getAuthorities());
+        if (collection == null) {
             return;
         }
         logger.info("正在访问的url是："+object.toString());
@@ -53,9 +59,11 @@ public class URLAccessDecisionManager implements AccessDecisionManager {
             ConfigAttribute ca = ite.next();
             String needRole = ca.getAttribute();
             if(has.contains(needRole)){
-                return;
+                continue;
+            }else{
+                throw new AccessDeniedException("没有权限");
             }
-            throw new AccessDeniedException("没有权限");
+
         }
 
     }

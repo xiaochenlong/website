@@ -464,63 +464,63 @@ public class SysUsersCriteria {
             return (Criteria) this;
         }
 
-        public Criteria andEnabledIsNull() {
-            addCriterion("ENABLED is null");
+        public Criteria andEnableIsNull() {
+            addCriterion("ENABLE is null");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledIsNotNull() {
-            addCriterion("ENABLED is not null");
+        public Criteria andEnableIsNotNull() {
+            addCriterion("ENABLE is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledEqualTo(Integer value) {
-            addCriterion("ENABLED =", value, "enabled");
+        public Criteria andEnableEqualTo(Integer value) {
+            addCriterion("ENABLE =", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledNotEqualTo(Integer value) {
-            addCriterion("ENABLED <>", value, "enabled");
+        public Criteria andEnableNotEqualTo(Integer value) {
+            addCriterion("ENABLE <>", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledGreaterThan(Integer value) {
-            addCriterion("ENABLED >", value, "enabled");
+        public Criteria andEnableGreaterThan(Integer value) {
+            addCriterion("ENABLE >", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledGreaterThanOrEqualTo(Integer value) {
-            addCriterion("ENABLED >=", value, "enabled");
+        public Criteria andEnableGreaterThanOrEqualTo(Integer value) {
+            addCriterion("ENABLE >=", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledLessThan(Integer value) {
-            addCriterion("ENABLED <", value, "enabled");
+        public Criteria andEnableLessThan(Integer value) {
+            addCriterion("ENABLE <", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledLessThanOrEqualTo(Integer value) {
-            addCriterion("ENABLED <=", value, "enabled");
+        public Criteria andEnableLessThanOrEqualTo(Integer value) {
+            addCriterion("ENABLE <=", value, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledIn(List<Integer> values) {
-            addCriterion("ENABLED in", values, "enabled");
+        public Criteria andEnableIn(List<Integer> values) {
+            addCriterion("ENABLE in", values, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledNotIn(List<Integer> values) {
-            addCriterion("ENABLED not in", values, "enabled");
+        public Criteria andEnableNotIn(List<Integer> values) {
+            addCriterion("ENABLE not in", values, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledBetween(Integer value1, Integer value2) {
-            addCriterion("ENABLED between", value1, value2, "enabled");
+        public Criteria andEnableBetween(Integer value1, Integer value2) {
+            addCriterion("ENABLE between", value1, value2, "enable");
             return (Criteria) this;
         }
 
-        public Criteria andEnabledNotBetween(Integer value1, Integer value2) {
-            addCriterion("ENABLED not between", value1, value2, "enabled");
+        public Criteria andEnableNotBetween(Integer value1, Integer value2) {
+            addCriterion("ENABLE not between", value1, value2, "enable");
             return (Criteria) this;
         }
 

@@ -7,7 +7,7 @@
     <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
     <result column="USER_PASSWORD" property="userPassword" jdbcType="VARCHAR" />
     <result column="USER_DESC" property="userDesc" jdbcType="VARCHAR" />
-    <result column="ENABLED" property="enabled" jdbcType="INTEGER" />
+    <result column="ENABLE" property="enable" jdbcType="INTEGER" />
     <result column="ISSYS" property="issys" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    USER_ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD, USER_DESC, ENABLED, ISSYS
+    USER_ID, USER_ACCOUNT, USER_NAME, USER_PASSWORD, USER_DESC, ENABLE, ISSYS
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="vip.ace.admin.domian.SysUsersCriteria" >
     select
@@ -106,10 +106,10 @@
   </delete>
   <insert id="insert" parameterType="vip.ace.admin.domian.SysUsers" useGeneratedKeys="true" keyColumn="USER_ID" keyProperty="userId" >
     insert into SYS_USERS (USER_ID, USER_ACCOUNT, USER_NAME, 
-      USER_PASSWORD, USER_DESC, ENABLED, 
+      USER_PASSWORD, USER_DESC, ENABLE, 
       ISSYS)
     values (#{userId,jdbcType=INTEGER}, #{userAccount,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
-      #{userPassword,jdbcType=VARCHAR}, #{userDesc,jdbcType=VARCHAR}, #{enabled,jdbcType=INTEGER}, 
+      #{userPassword,jdbcType=VARCHAR}, #{userDesc,jdbcType=VARCHAR}, #{enable,jdbcType=INTEGER}, 
       #{issys,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="vip.ace.admin.domian.SysUsers" useGeneratedKeys="true" keyColumn="USER_ID" keyProperty="userId" >
@@ -130,8 +130,8 @@
       <if test="userDesc != null" >
         USER_DESC,
       </if>
-      <if test="enabled != null" >
-        ENABLED,
+      <if test="enable != null" >
+        ENABLE,
       </if>
       <if test="issys != null" >
         ISSYS,
@@ -153,8 +153,8 @@
       <if test="userDesc != null" >
         #{userDesc,jdbcType=VARCHAR},
       </if>
-      <if test="enabled != null" >
-        #{enabled,jdbcType=INTEGER},
+      <if test="enable != null" >
+        #{enable,jdbcType=INTEGER},
       </if>
       <if test="issys != null" >
         #{issys,jdbcType=INTEGER},
@@ -185,8 +185,8 @@
       <if test="record.userDesc != null" >
         USER_DESC = #{record.userDesc,jdbcType=VARCHAR},
       </if>
-      <if test="record.enabled != null" >
-        ENABLED = #{record.enabled,jdbcType=INTEGER},
+      <if test="record.enable != null" >
+        ENABLE = #{record.enable,jdbcType=INTEGER},
       </if>
       <if test="record.issys != null" >
         ISSYS = #{record.issys,jdbcType=INTEGER},
@@ -203,7 +203,7 @@
       USER_NAME = #{record.userName,jdbcType=VARCHAR},
       USER_PASSWORD = #{record.userPassword,jdbcType=VARCHAR},
       USER_DESC = #{record.userDesc,jdbcType=VARCHAR},
-      ENABLED = #{record.enabled,jdbcType=INTEGER},
+      ENABLE = #{record.enable,jdbcType=INTEGER},
       ISSYS = #{record.issys,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -224,8 +224,8 @@
       <if test="userDesc != null" >
         USER_DESC = #{userDesc,jdbcType=VARCHAR},
       </if>
-      <if test="enabled != null" >
-        ENABLED = #{enabled,jdbcType=INTEGER},
+      <if test="enable != null" >
+        ENABLE = #{enable,jdbcType=INTEGER},
       </if>
       <if test="issys != null" >
         ISSYS = #{issys,jdbcType=INTEGER},
@@ -239,7 +239,7 @@
       USER_NAME = #{userName,jdbcType=VARCHAR},
       USER_PASSWORD = #{userPassword,jdbcType=VARCHAR},
       USER_DESC = #{userDesc,jdbcType=VARCHAR},
-      ENABLED = #{enabled,jdbcType=INTEGER},
+      ENABLE = #{enable,jdbcType=INTEGER},
       ISSYS = #{issys,jdbcType=INTEGER}
     where USER_ID = #{userId,jdbcType=INTEGER}
   </update>

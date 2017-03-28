@@ -6,7 +6,6 @@ import vip.ace.admin.domian.SysUsers;
 import vip.ace.admin.domian.SysUsersCriteria;
 
 public interface SysUsersMapper {
-
     int countByExample(SysUsersCriteria example);
 
     int deleteByExample(SysUsersCriteria example);

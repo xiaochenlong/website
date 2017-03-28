@@ -57,8 +57,8 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 
         http.addFilterAfter(filterSecurityInterceptor(), FilterSecurityInterceptor.class);
 
-        http.authorizeRequests().antMatchers("/css/**").permitAll()
-                .anyRequest().fullyAuthenticated();
+        http.authorizeRequests().anyRequest().authenticated();
+
         http.formLogin()
                 .loginPage(LoginUrl)
                 .failureUrl(LoginUrl + "?error")

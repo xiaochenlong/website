@@ -19,7 +19,7 @@ public class SysUsers implements Serializable, UserDetails {
 
     private String userDesc;
 
-    private Integer enabled;
+    private Integer enable;
 
     private Integer issys;
 
@@ -70,12 +70,12 @@ public class SysUsers implements Serializable, UserDetails {
         this.userDesc = userDesc == null ? null : userDesc.trim();
     }
 
-    public Integer getEnabled() {
-        return enabled;
+    public Integer getEnable() {
+        return enable;
     }
 
-    public void setEnabled(Integer enabled) {
-        this.enabled = enabled;
+    public void setEnable(Integer enable) {
+        this.enable = enable;
     }
 
     public Integer getIssys() {
@@ -97,7 +97,7 @@ public class SysUsers implements Serializable, UserDetails {
         sb.append(", userName=").append(userName);
         sb.append(", userPassword=").append(userPassword);
         sb.append(", userDesc=").append(userDesc);
-        sb.append(", enabled=").append(enabled);
+        sb.append(", enable=").append(enable);
         sb.append(", issys=").append(issys);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
@@ -117,12 +117,12 @@ public class SysUsers implements Serializable, UserDetails {
         }
         SysUsers other = (SysUsers) that;
         return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-                && (this.getUserAccount() == null ? other.getUserAccount() == null : this.getUserAccount().equals(other.getUserAccount()))
-                && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
-                && (this.getUserPassword() == null ? other.getUserPassword() == null : this.getUserPassword().equals(other.getUserPassword()))
-                && (this.getUserDesc() == null ? other.getUserDesc() == null : this.getUserDesc().equals(other.getUserDesc()))
-                && (this.getEnabled() == null ? other.getEnabled() == null : this.getEnabled().equals(other.getEnabled()))
-                && (this.getIssys() == null ? other.getIssys() == null : this.getIssys().equals(other.getIssys()));
+            && (this.getUserAccount() == null ? other.getUserAccount() == null : this.getUserAccount().equals(other.getUserAccount()))
+            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
+            && (this.getUserPassword() == null ? other.getUserPassword() == null : this.getUserPassword().equals(other.getUserPassword()))
+            && (this.getUserDesc() == null ? other.getUserDesc() == null : this.getUserDesc().equals(other.getUserDesc()))
+            && (this.getEnable() == null ? other.getEnable() == null : this.getEnable().equals(other.getEnable()))
+            && (this.getIssys() == null ? other.getIssys() == null : this.getIssys().equals(other.getIssys()));
     }
 
     @Override
@@ -134,7 +134,7 @@ public class SysUsers implements Serializable, UserDetails {
         result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
         result = prime * result + ((getUserPassword() == null) ? 0 : getUserPassword().hashCode());
         result = prime * result + ((getUserDesc() == null) ? 0 : getUserDesc().hashCode());
-        result = prime * result + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        result = prime * result + ((getEnable() == null) ? 0 : getEnable().hashCode());
         result = prime * result + ((getIssys() == null) ? 0 : getIssys().hashCode());
         return result;
     }
@@ -171,7 +171,7 @@ public class SysUsers implements Serializable, UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return this.enabled == 1;
+        return this.enable == 1;
     }
 
     public Set<SysRoles> getRoles() {

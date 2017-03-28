@@ -41,7 +41,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.99.100:3306/ace_bak"
+                        connectionURL="jdbc:mysql://192.168.99.100:3306/ace"
                         userId="root"
                         password="toor"/>
 
@@ -84,6 +84,6 @@
         <!--</table>-->
         <!--<table tableName="SYS_USERS_ROLES">-->
         <!--</table>-->
-        <table tableName="xx"></table>
+        <table tableName="SYS_USERS"></table>
     </context>
 </generatorConfiguration>
