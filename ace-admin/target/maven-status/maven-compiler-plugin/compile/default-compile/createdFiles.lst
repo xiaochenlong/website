@@ -1,6 +1,0 @@
-vip/ace/admin/Admin.class
-vip/ace/admin/conf/ApplicationSecurity.class
-vip/ace/admin/web/ctrls/AdminController.class
-vip/ace/admin/domian/UserDetailsImpl.class
-vip/ace/admin/web/ctrls/IndexController.class
-vip/ace/admin/service/impl/UserDetailsServiceImpl.class

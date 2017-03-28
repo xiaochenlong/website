@@ -58,16 +58,13 @@ public class URLAccessDecisionManager implements AccessDecisionManager {
         while (ite.hasNext()) {
             ConfigAttribute ca = ite.next();
             String needRole = ca.getAttribute();
-            if(has.contains(needRole)){
-                continue;
-            }else{
+            if(!has.contains(needRole)){
                 throw new AccessDeniedException("没有权限");
             }
 
         }
 
     }
-
     @Override
     public boolean supports(ConfigAttribute configAttribute) {
         return true;

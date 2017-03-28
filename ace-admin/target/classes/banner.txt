@@ -1,4 +1,0 @@
-webadmin-${application.title}-${application.version}--${spring-boot.version}---start
-
-
-SpringFactoriesLoader.loadFactoryNames
