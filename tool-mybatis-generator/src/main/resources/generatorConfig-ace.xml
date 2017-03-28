@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="my" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="connectionURL" value="jdbc:mysql://192.168.99.100:3306/ace"/>
+        <property name="userId" value="root"/>
+        <property name="password" value="toor"/>
+        <property name="project_dir" value="/Users/xcl/gitresp/showcase/website/ace-admin"/>
+        <property name="model_package" value="vip.ace.admin.domian"/>
+        <property name="xml_package" value="mapper"/>
+        <property name="dao_package" value="vip.ace.admin.dao"/>
+
+        <property name="mergeable" value="false"/>
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="vip.ace.mybatis.generator.plugin.PaginationPlugin" />
+        <plugin type="vip.ace.mybatis.generator.plugin.MysqlPrimaryKeyPlugin" />
+
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"></property>
+            <property name="replaceString" value="Criteria"></property>
+        </plugin>
+
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="example$"></property>
+            <property name="replaceString" value="criteria"></property>
+        </plugin>
+
+
+
+
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.99.100:3306/ace_bak"
+                        userId="root"
+                        password="toor"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+
+
+        <javaModelGenerator targetPackage="vip.ace.admin.domian"
+                            targetProject="/Users/xcl/gitresp/showcase/website/ace-admin/src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/Users/xcl/gitresp/showcase/website/ace-admin/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="vip.ace.admin.dao"
+                             targetProject="/Users/xcl/gitresp/showcase/website/ace-admin/src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="SYS_AUTHORITIES">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_RESOURCES">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_ROLES">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_USERS">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_MENU">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_AUTHORITIES_RESOURCES">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_ROLES_AUTHORITIES">-->
+        <!--</table>-->
+        <!--<table tableName="SYS_USERS_ROLES">-->
+        <!--</table>-->
+        <table tableName="xx"></table>
+    </context>
+</generatorConfiguration>
