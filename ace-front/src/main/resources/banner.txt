@@ -30,11 +30,5 @@ front-${application.title}-${application.version}--${spring-boot.version}---star
                      别人笑我忒疯癫，我笑自己命太贱；
                      不见满街漂亮妹，哪个归得程序员？
 
-spring.factories:
 
-1.监听Application事件组件
-org.springframework.context.ApplicationListener=
-组件实现接口ApplicationListener<SpringApplicationEvent>
 
-2.按条件组装bean的配置类
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=

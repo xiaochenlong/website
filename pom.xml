@@ -27,6 +27,8 @@
         <module>ace-schedule</module>
         <module>tool-mybatis-generator</module>
         <module>tool-mybatis-generator-plugin</module>
+        <module>ace-cache</module>
+        <module>ace-secret</module>
     </modules>
 
 

@@ -7,12 +7,16 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Component;
 import vip.ace.admin.conf.ApplicationSecurity;
+import vip.ace.admin.domian.SysAuthorities;
+import vip.ace.admin.domian.SysAuthoritiesCriteria;
 import vip.ace.admin.service.SysAuthoritiesService;
+import vip.ace.admin.service.SysResourcesService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by xcl on 16/9/27.
@@ -25,6 +29,9 @@ public class URLFilterInvocationSecurityMetadataSource implements FilterInvocati
     @Autowired
     private SysAuthoritiesService sysAuthoritiesService;
 
+    @Autowired
+    private  SysResourcesService sysResourcesService;
+
     /**
      * 用户获取正在访问的资源所对应的权限
      */
@@ -33,18 +40,15 @@ public class URLFilterInvocationSecurityMetadataSource implements FilterInvocati
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
         HttpServletRequest request = ((FilterInvocation)object).getRequest();
         String url = request.getRequestURI();
-        System.out.println("获取请求url资源需要的权限******"+url);
         if(ApplicationSecurity.LoginUrl.equals(url)){
             return null;
         }
+        System.out.println("获取请求url资源需要的权限******"+url);
         List<ConfigAttribute> list = new ArrayList<ConfigAttribute>();
-
-        if(url.startsWith("/admin")){
-
-            list.add(new SecurityConfig("ROLE_USER"));
-
+        Set<Integer> auths = sysResourcesService.listAuthoritiesIdByResource(url);
+        for(Integer a:auths){
+            list.add(new SecurityConfig(a.toString()));
         }
-
         return list;
     }
 
@@ -53,7 +57,11 @@ public class URLFilterInvocationSecurityMetadataSource implements FilterInvocati
      */
     @Override
     public Collection<ConfigAttribute> getAllConfigAttributes() {
+        List<SysAuthorities> all = sysAuthoritiesService.list(new SysAuthoritiesCriteria());
         List<ConfigAttribute> _list = new ArrayList<ConfigAttribute>();
+        for(SysAuthorities a:all){
+            _list.add(new SecurityConfig(a.getAuthorityId().toString()));
+        }
         return _list;
     }
 

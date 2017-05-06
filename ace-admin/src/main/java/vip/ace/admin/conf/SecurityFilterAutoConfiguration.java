@@ -42,17 +42,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
-/**
- * {@link EnableAutoConfiguration Auto-configuration} for Spring Security's Filter.
- * Configured separately from {@link SpringBootWebSecurityConfiguration} to ensure that
- * the filter's order is still configured when a user-provided
- * {@link WebSecurityConfiguration} exists.
- *
- * @author Rob Winch
- * @author Phillip Webb
- * @author Andy Wilkinson
- * @since 1.3
- */
 @Configuration
 @ConditionalOnWebApplication
 @EnableConfigurationProperties

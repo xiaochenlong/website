@@ -1,0 +1,35 @@
+app:
+  name: ACE-ADMIN
+  description: ${app.name} is a Spring Boot application
+
+server:
+  port: 8003
+  sessionTimeout: 30
+  contextPath: /
+
+
+
+site:
+  version: 1.0,
+  author: xiaochenlong
+
+
+spring:
+  redis:
+    database: 0 # Database index used by the connection factory.
+    host: 192.168.99.100 # Redis server host.
+    ssl: false # Enable SSL support.
+    password:  # Login password of the redis server.
+    pool.max-active: 8 # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+    pool.max-idle: 8 # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+    pool.max-wait: -1 # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+    pool.min-idle: 0 # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+    port: 6379 # Redis server port.
+    timeout: 0 # Connection timeout in milliseconds.
+  cache:
+      cache-names: redis1,countries
+      couchbase:
+        expiration: 2000
+      caffeine:
+        spec: maximumSize=200,expireAfterAccess=200s
+

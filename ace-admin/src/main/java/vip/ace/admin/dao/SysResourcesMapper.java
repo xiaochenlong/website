@@ -1,6 +1,8 @@
 package vip.ace.admin.dao;
 
 import java.util.List;
+import java.util.Set;
+
 import org.apache.ibatis.annotations.Param;
 import vip.ace.admin.domian.SysResources;
 import vip.ace.admin.domian.SysResourcesCriteria;
@@ -27,4 +29,6 @@ public interface SysResourcesMapper {
     int updateByPrimaryKeySelective(SysResources record);
 
     int updateByPrimaryKey(SysResources record);
+
+    Set<Integer> listAuthoritiesIdByResource(String url);
 }
